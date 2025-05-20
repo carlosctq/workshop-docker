@@ -1,0 +1,68 @@
+======Infra Linux e Docker=========
+
+-----Criar a pasta-----
+
+Criar pasta
+
+cd "/c/Users/carlo/OneDrive/Área de Trabalho/cursos/jornada_dados/workshop-docker"
+
+GIthub: criar novo repositorio:  workshop-docker
+
+Inicializar o git
+
+git init
+
+Inicializar o poetry
+
+poetry init
+
+
+setar o repositorio git:
+
+echo "# workshop_docker" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/carlosctq/workshop_docker.git
+git push -u origin main
+
+
+
+Setar python 
+
+pyenv local 3.12.1
+
+
+poetry env use 3.12.1
+
+
+-----Setup Docker-----
+
+1. Instalar o Docker:
+ 
+a. https://www.docker.com/products/docker-desktop/
+
+b. Products/DOcker Desktop/Download DOcker Desktop  
+
+
+2. Criar conta 
+
+usuario: carloscavalcante1
+
+loga com o e-mail carlos.cavalcante1
+
+
+
+
+
+---Setup pasta----
+
+repositorio git: docker1
+
+echo "# docker1" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/carlosctq/docker1.git
