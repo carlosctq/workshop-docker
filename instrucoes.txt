@@ -2,22 +2,22 @@
 
 -----Criar a pasta-----
 
-Criar pasta
+--Criar pasta
 
 cd "/c/Users/carlo/OneDrive/Área de Trabalho/cursos/jornada_dados/workshop-docker"
 
 GIthub: criar novo repositorio:  workshop-docker
 
-Inicializar o git
+--Inicializar o git
 
 git init
 
-Inicializar o poetry
+--Inicializar o poetry
 
 poetry init
 
 
-setar o repositorio git:
+--setar o repositorio git:
 
 echo "# workshop_docker" >> README.md
 git init
@@ -29,13 +29,53 @@ git push -u origin main
 
 
 
-Setar python 
+--Setar python 
 
 pyenv local 3.12.1
 
 
 poetry env use 3.12.1
 
+.gitignore
+
+.venv    (dentro do .gitignore)
+
+
+
+--Criar o primeio arquivo app.py
+
+
+Fazer o primeiro commit
+
+git add .
+
+git commit -m "my first commit"
+
+
+--Adicionar streamlit usando o poetry
+
+poetry add streamlit
+
+
+--criar o primeiro codigo streamlit no app.py:
+
+
+import streamlit as st
+
+def hello_world():
+    return "Olá Turma de Dados! Mudei o codigo Aula de Docker"
+
+def main():
+    st.write(hello_world())
+
+if __name__ == "__main__":
+    main()
+ 
+
+
+--Rodar o aplicativo
+
+poetry run streamlit run app.py
 
 -----Setup Docker-----
 
@@ -53,16 +93,25 @@ usuario: carloscavalcante1
 loga com o e-mail carlos.cavalcante1
 
 
+--Criar arquivo Dockerfile
+
+
+no vs code :   Dockerfile
+
+FROM python:3.12
+RUN pip install poetry
+COPY . /src
+WORKDIR /src
+RUN poetry install --no-root
+EXPOSE 8501
+ENTRYPOINT ["poetry","run", "streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+# ENTRYPOINT ["poetry","run", "python", "main.py"]
 
 
 
----Setup pasta----
+criar o .dockerignore
 
-repositorio git: docker1
+.dockerignore
 
-echo "# docker1" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/carlosctq/docker1.git
+
+
